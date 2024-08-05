@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Slider from 'react-slick';
 import Navbar from './Navbar'; // Adjust the path if necessary
-import { DocumentTextIcon, GlobeAltIcon, UserGroupIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import { DocumentTextIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
 
 // Sample team members data
-
 const teamMembers = [
   {
     name: 'Jane Doe',
@@ -29,40 +27,21 @@ const teamMembers = [
 ];
 
 const AboutUs = () => {
-  // Slider settings
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    centerMode: true,
-    centerPadding: '30px',
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          centerPadding: '20px',
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          centerPadding: '10px',
-          dots: true
-        }
-      }
-    ]
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % teamMembers.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === 0 ? teamMembers.length - 1 : prevSlide - 1
+    );
   };
 
   return (
     <>
-        <Navbar />
+      <Navbar />
       <div className="relative bg-gradient-to-r from-teal-100 to-teal-300 py-20 overflow-hidden">
         <div className="absolute inset-0">
           <svg className="absolute top-0 left-0 w-full h-full text-teal-200" fill="currentColor" viewBox="0 0 200 200" preserveAspectRatio="none">
@@ -119,21 +98,28 @@ const AboutUs = () => {
           </div>
 
           {/* Our Team Section with Carousel */}
-          <div className="bg-teal-500 p-8 rounded-lg shadow-lg mb-12">
-            <h2 className="text-4xl font-extrabold text-center mb-6">Meet Our Team</h2>
-            <Slider {...settings} className="team-slider">
-              {teamMembers.map((member, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300 relative">
-                  <div className="relative">
-                    <img src={member.image} alt={member.name} className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-teal-500" />
-                    
-                  </div>
-                  <h5 className="text-xl font-semibold text-center mb-1">{member.name}</h5>
-                  <p className="text-gray-600 text-center">{member.position}</p>
-                  <p className="text-gray-600 text-center mt-2">{member.description}</p>
+          <h2 className="text-4xl font-extrabold text-center mb-6">Meet Our Team</h2>
+          <div className="flex justify-center items-center relative">
+            <button onClick={prevSlide} className="absolute left-0 z-10 bg-teal-500 text-white p-2 rounded-full hover:bg-teal-600">
+              &lt;
+            </button>
+            <div className="w-full md:w-2/3 lg:w-1/2 p-4 flex justify-center">
+              <div className="bg-white p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-300 text-center">
+                <div className="relative mb-4">
+                  <img
+                    src={teamMembers[currentSlide].image}
+                    alt={teamMembers[currentSlide].name}
+                    className="w-32 h-32 object-cover rounded-full border-4 border-teal-500 mx-auto"
+                  />
                 </div>
-              ))}
-            </Slider>
+                <h5 className="text-xl font-semibold mb-1">{teamMembers[currentSlide].name}</h5>
+                <p className="text-gray-600">{teamMembers[currentSlide].position}</p>
+                <p className="text-gray-600 mt-2">{teamMembers[currentSlide].description}</p>
+              </div>
+            </div>
+            <button onClick={nextSlide} className="absolute right-0 z-10 bg-teal-500 text-white p-2 rounded-full hover:bg-teal-600">
+              &gt;
+            </button>
           </div>
         </div>
       </div>

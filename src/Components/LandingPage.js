@@ -186,14 +186,14 @@ const LandingPage = () => {
             playsInline
             preload="auto"
           >
-            <source src="https://videos.pexels.com/video-files/7414127/7414127-sd_640_360_24fps.mp4" type="video/mp4" />
+            <source src="https://videos.pexels.com/video-files/1580507/1580507-sd_640_360_30fps.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center">
-            <h2 className="text-4xl font-bold text-red-500 sm:text-5xl lg:text-6xl" data-aos="zoom-out" data-aos-duration="700">Upcoming Events</h2>
-            <p className="mt-4 text-lg text-red-500" data-aos="slide-right" data-aos-duration="700">Discover our exciting lineup of events and workshops designed to engage and inspire.</p>
+            <h2 className="text-4xl font-bold text-black sm:text-5xl lg:text-6xl" data-aos="zoom-out" data-aos-duration="700">Upcoming Events</h2>
+            <p className="mt-4 text-2xl font-bold text-black" data-aos="slide-right" data-aos-duration="700">Discover our exciting lineup of events and workshops designed to engage and inspire.</p>
             <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {/* Event Card 1 */}
               <div className="relative bg-teal-700 p-6 rounded-lg shadow-lg hover:bg-teal-600 transition duration-300 ease-in-out">
@@ -243,7 +243,7 @@ const LandingPage = () => {
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center relative z-10">
             <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl" data-aos="zoom-out" data-aos-duration="700">Blog & News</h2>
-            <p className="mt-4 text-lg text-gray-300">Read our latest updates, success stories, and news.</p>
+            <p className="mt-4 text-2xl text-gray-900">Read our latest updates, success stories, and news.</p>
             <div className="mt-8 flex justify-center">
               <Link to="/blog" className="px-6 py-3 text-lg font-semibold text-white bg-green-500 rounded-md shadow-md hover:bg-green-600" onClick={handleScrollToTop} data-aos="slide-up" data-aos-duration="700">Read Our Blog</Link>
             </div>
