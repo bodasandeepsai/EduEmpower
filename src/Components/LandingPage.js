@@ -243,7 +243,7 @@ const LandingPage = () => {
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center relative z-10">
             <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl" data-aos="zoom-out" data-aos-duration="700">Blog & News</h2>
-            <p className="mt-4 text-2xl text-gray-900">Read our latest updates, success stories, and news.</p>
+            <p className="mt-4 text-lg text-white">Read our latest updates, success stories, and news.</p>
             <div className="mt-8 flex justify-center">
               <Link to="/blog" className="px-6 py-3 text-lg font-semibold text-white bg-green-500 rounded-md shadow-md hover:bg-green-600" onClick={handleScrollToTop} data-aos="slide-up" data-aos-duration="700">Read Our Blog</Link>
             </div>
