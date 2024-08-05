@@ -42,7 +42,7 @@ const LandingPage = () => {
       {/* Navigation Bar */}
       <Navbar />
       {/* Hero Section */}
-      <div className="relative pt-20 overflow-hidden bg-gradient-to-r from-teal-500 to-blue-600 text-white">
+      <div className="relative pt-20 overflow-hidden bg-gradient-to-r from-teal-500 to-blue-500 text-white">
         <div className="relative px-4 py-20 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="absolute inset-0 overflow-hidden" data-aos="zoom-out">
             <Carousel
@@ -193,7 +193,7 @@ const LandingPage = () => {
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-4xl font-bold text-black sm:text-5xl lg:text-6xl" data-aos="zoom-out" data-aos-duration="700">Upcoming Events</h2>
-            <p className="mt-4 text-2xl font-bold text-black" data-aos="slide-right" data-aos-duration="700">Discover our exciting lineup of events and workshops designed to engage and inspire.</p>
+            <p className="mt-4 text-lg text-grey-300" data-aos="slide-right" data-aos-duration="700">Discover our exciting lineup of events and workshops designed to engage and inspire.</p>
             <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {/* Event Card 1 */}
               <div className="relative bg-teal-700 p-6 rounded-lg shadow-lg hover:bg-teal-600 transition duration-300 ease-in-out">
